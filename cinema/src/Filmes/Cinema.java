@@ -98,6 +98,7 @@ public class Cinema {
         }
 
         Filme maiorArrecadacao = filmes.get(0);
+        double totalGeral = 0;
 
         System.out.println("========= RELATORIO DE VENDAS =========");
 
@@ -109,12 +110,14 @@ public class Cinema {
             System.out.printf("Valor arrecadado: R$ %.2f%n", filme.getValorArrecadado());
             System.out.println("---------------------------------------");
 
+            totalGeral += filme.getValorArrecadado();
+
             if (filme.getValorArrecadado() > maiorArrecadacao.getValorArrecadado()) {
                 maiorArrecadacao = filme;
             }
         }
 
         System.out.println("Filme com maior arrecadacao: " + maiorArrecadacao.getNome());
-        System.out.printf("Total arrecadado: R$ %.2f%n", maiorArrecadacao.getValorArrecadado());
+        System.out.printf("Total arrecadado: R$ %.2f%n", totalGeral);
     }
 }
